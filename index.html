@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Action</title>
+</head>
+
+<body>
+    <div class="main">
+        <section class="left" onclick="todo.method().pre()">
+            <img src="./imgs/arrow_L.svg" title="上一个">
+        </section>
+        <section class="middle">
+            <span id="most" class=" normal"></span>
+            <!-- <span class="sea normal" >Sea</span> -->
+        </section>
+        <section class="right" onclick="todo.method().next()">
+            <img src="./imgs/arrow_R.svg" title="下一个">
+        </section>
+    </div>
+
+</body>
+<script src="./index.js"></script>
+<style type="text/css">
+    .main {
+        margin-top:10%;
+        display: flex;
+        flex-direction: row;
+    
+       
+    }
+
+    .middle {
+        width: 80%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left,
+    .right {
+        width: 10%;
+        height: 100%;
+        margin: auto 0;
+        cursor: pointer;
+    }
+
+    .normal {
+        margin-top: 1rem;
+        cursor: pointer;
+        border-radius: 1.5rem;
+        color: transparent;
+        text-align: center;
+        font-size: 16rem;
+        font-weight: 900;
+        width: 80%;
+
+    }
+
+  
+
+    .normal:hover {
+        -webkit-background-clip: text;
+    }
+
+    
+</style>
+
+</html>

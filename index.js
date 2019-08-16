@@ -6,9 +6,9 @@
         data : {
             currentTheme: 0,
             contents:[
-                {theme:'pizza',src:'url(./imgs/pizza.jpg)'},
-                {theme:'sea',src:'url(./imgs/sea.jpg)'},
-                {theme:'fruit',src:'url(./imgs/fruit.jpg)'}
+                {theme:'工作笔记',src:'url(./imgs/pizza.jpg)'},
+                {theme:'备忘录',src:'url(./imgs/sea.jpg)'},
+                {theme:'生活日记',src:'url(./imgs/fruit.jpg)'}
             ],
         },
         method : function () {

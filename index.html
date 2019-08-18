@@ -16,7 +16,8 @@
 
         <section class="middle">
             <section class="header"> 
-                <h1>清凉一夏</h1>
+                <span class="title">鲸落的博客</span>
+                <h3 style="color: antiquewhite">希望大家能活成自己想要的样子。</h3>
             </section>
 
             <section class="down flex-col">
@@ -43,10 +44,11 @@
                 </div>
 
             </section>
-
-
-
-
+            <section class="footer ">
+                <span>@CopyRight&nbsp;点墨书生&nbsp;文昊&nbsp;&nbsp;</span>
+                <span>联系电话：17863129132&nbsp;</span>
+                <span>QQ:1944522054</span>
+            </section>
         </section>
         <section class="right">
 
@@ -56,10 +58,26 @@
 </body>
 <script src="./index.js"></script>
 <style type="text/css">
-    body {}
+body {
+    background: no-repeat url('./imgs/back.jpg');
+    background-size: cover;
+}
+.title {
+    font-size: 3rem;
+    color: antiquewhite;
+    margin-top: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+}
 
 .header {
     height: 15%;;
+}
+.footer {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    text-align: center;  
+    color: rgba(233, 227, 227, 0.815);
 }
     .flex-row {
         display: flex;
@@ -98,18 +116,23 @@
 
     .one {
         background-image: url('./imgs/fruit.jpg');
+        /* background-size: cover; */
     }
 
     .two {
-        background-image: url('./imgs/sea.jpg');
+        background-image: url('./imgs/sky.jpg');
+        background-size: cover;
     }
 
     .three {
-        background-image: url('./imgs/pizza.jpg');
+        background-image: url('./imgs/sea.jpg');
+        background-size: cover;
     }
 
     .four {
-        background-image: url('./imgs/fruit.jpg');
+        background-image: url('./imgs/pizza.jpg');
+        background-size: cover;
+        /* background-position: -200px -100px; */
     }
 
 .up {
@@ -126,7 +149,7 @@
         width: 50%;
         color: transparent;
         text-align: center;
-        font-size: 6rem;
+        font-size: 6.3rem;
         font-weight: 900;
     }
 

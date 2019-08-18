@@ -9,36 +9,74 @@
 </head>
 
 <body>
-    <div class="main">
-        <section class="left" onclick="todo.method().pre()">
-            <img src="./imgs/arrow_L.svg" title="上一个">
+    <div class="main flex-row">
+        <section class="left">
+
         </section>
+
         <section class="middle">
-            <span id="most" class=" normal"></span>
-            <!-- <span class="sea normal" >Sea</span> -->
+            <section class="header"> 
+                <h1>清凉一夏</h1>
+            </section>
+
+            <section class="down flex-col">
+                <div class="flex-row">
+                    <div class="one normal">
+                        <span>工作笔记</span>
+                    </div>
+                    <div style="width: 1rem"></div>
+                    <div class="two normal">
+                        <span>生活日记</span>
+
+                    </div>
+                </div>
+
+                <div class="flex-row">
+                    <div class="three normal">
+                        <span>备忘录</span>
+                    </div>
+                    <div style="width: 1rem"></div>
+                    <div class="four normal">
+                        <span>欢迎留言</span>
+
+                    </div>
+                </div>
+
+            </section>
+
+
+
+
         </section>
-        <section class="right" onclick="todo.method().next()">
-            <img src="./imgs/arrow_R.svg" title="下一个">
+        <section class="right">
+
         </section>
     </div>
 
 </body>
 <script src="./index.js"></script>
 <style type="text/css">
-    .main {
-        margin-top:10%;
+    body {}
+
+.header {
+    height: 15%;;
+}
+    .flex-row {
         display: flex;
         flex-direction: row;
-    
-       
+    }
+    .flex-col {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main {
+        width: 100%;
     }
 
     .middle {
         width: 80%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        height: 75%;
     }
 
     .left,
@@ -58,25 +96,45 @@
         opacity: 0.6;
     }
 
+    .one {
+        background-image: url('./imgs/fruit.jpg');
+    }
+
+    .two {
+        background-image: url('./imgs/sea.jpg');
+    }
+
+    .three {
+        background-image: url('./imgs/pizza.jpg');
+    }
+
+    .four {
+        background-image: url('./imgs/fruit.jpg');
+    }
+
+.up {
+    height: 40%;
+}
+.down {
+
+}
     .normal {
         margin-top: 1rem;
         cursor: pointer;
-        border-radius: 1.5rem;
+        border-radius: 1rem;
+        padding: 2rem;
+        width: 50%;
         color: transparent;
         text-align: center;
-        font-size: 16rem;
+        font-size: 6rem;
         font-weight: 900;
-        width: 80%;
-        padding: 1rem;
     }
 
-  
+
 
     .normal:hover {
         -webkit-background-clip: text;
     }
-
-    
 </style>
 
 </html>

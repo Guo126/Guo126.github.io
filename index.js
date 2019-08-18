@@ -1,7 +1,7 @@
 (function () {
     const todo = {
         create: function(){
-            this.method().show();
+            //this.method().show();
         },
         data : {
             currentTheme: 0,

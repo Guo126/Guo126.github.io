@@ -1,43 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>一鲸落，万物生</title>
-</head>
-
 <body>
     <div class="main flex-row">
         <section class="left">
-
         </section>
-
         <section class="middle">
-            <section class="header"> 
+            <section class="header">
                 <span class="title">鲸落的博客</span>
-                <h3 style="color: antiquewhite">希望大家能活成自己想要的样子。</h3>
+                <h3 style="color: rgb(255, 255, 255)">希望大家能活成自己想要的样子。</h3>
             </section>
 
             <section class="down flex-col">
                 <div class="flex-row">
-                    <div class="one normal">
+                    <div class="one normal" onclick="todo.method().workPanel()">
                         <span>工作笔记</span>
                     </div>
                     <div style="width: 1rem"></div>
-                    <div class="two normal">
-                        <span>生活日记</span>
-
+                    <div class="two normal" onclick="todo.method().demoPanel()">
+                        <span>Demo</span>
+                       
                     </div>
                 </div>
 
                 <div class="flex-row">
-                    <div class="three normal">
+                    <div class="three normal" onclick="todo.method().bookPanel()">
                         <span>备忘录</span>
                     </div>
                     <div style="width: 1rem"></div>
-                    <div class="four normal">
+                    <div class="four normal" onclick="todo.method().talkPanel()">
                         <span>欢迎留言</span>
 
                     </div>
@@ -57,32 +45,40 @@
 
 </body>
 <script src="./index.js"></script>
+<script src="../../router/index.js"></script>
+<script src="../../router/router.js"></script>
 <style type="text/css">
-body {
-    background: no-repeat url('./imgs/sky.jpg');
-    background-size: cover;
-}
-.title {
-    font-size: 3rem;
-    color: antiquewhite;
-    margin-top: 2rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 600;
-}
+    body {
+        background: no-repeat url('../../imgs/sky.jpg');
+        background-size: cover;
+    }
 
-.header {
-    height: 15%;;
-}
-.footer {
-    margin-top: 2rem;
-    font-size: 0.8rem;
-    text-align: center;  
-    color: rgba(233, 227, 227, 0.815);
-}
+    .title {
+        font-size: 3rem;
+        color: rgb(255, 255, 255);
+        margin-top: 2rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 600;
+    }
+
+    .header {
+        margin-top: 2rem;
+        height: 15%;
+        
+    }
+
+    .footer {
+        margin-top: 2rem;
+        font-size: 0.8rem;
+        text-align: center;
+        color: rgba(233, 227, 227, 0.952);
+    }
+
     .flex-row {
         display: flex;
         flex-direction: row;
     }
+
     .flex-col {
         display: flex;
         flex-direction: column;
@@ -106,41 +102,35 @@ body {
         cursor: pointer;
     }
 
-    .right:hover {
-        opacity: 0.6;
-    }
 
-    .left:hover {
-        opacity: 0.6;
-    }
 
     .one {
-        background-image: url('./imgs/fruit.jpg');
-        /* background-size: cover; */
+        background-image: url('../../imgs/fruit.jpg');
+        background-size: cover;
     }
 
     .two {
-        background-image: url('./imgs/sky.jpg');
+        background-image: url('../../imgs/sky.jpg');
         background-size: cover;
     }
 
     .three {
-        background-image: url('./imgs/sea.jpg');
+        background-image: url('../../imgs/sea.jpg');
         background-size: cover;
     }
 
     .four {
-        background-image: url('./imgs/pizza.jpg');
+        background-image: url('../../imgs/pizza.jpg');
         background-size: cover;
         /* background-position: -200px -100px; */
     }
 
-.up {
-    height: 40%;
-}
-.down {
+    .up {
+        height: 40%;
+    }
 
-}
+    .down {}
+
     .normal {
         margin-top: 1rem;
         cursor: pointer;
@@ -152,12 +142,7 @@ body {
         font-size: 6.3rem;
         font-weight: 900;
     }
-
-
-
     .normal:hover {
         -webkit-background-clip: text;
     }
 </style>
-
-</html>

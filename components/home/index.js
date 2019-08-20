@@ -2,6 +2,7 @@
     const todo = {
         create: function(){
             //this.method().show();
+            
         },
         data : {
             currentTheme: 0,
@@ -44,10 +45,26 @@
                     main.style.backgroundImage =  this.data.contents[this.data.currentTheme].src;
                 },
 
-               
+                //打开工作笔记
+                workPanel: ()=> {
+                    window.parent.push('/work');
+                },
+                //打开Demo
+                demoPanel: ()=> {                    
+                    window.parent.push('/demo');
+                },
+                //打开备忘录
+                bookPanel: ()=> {
+                    window.parent.push('/book');
+                },
+                //打开留言板
+                talkPanel: ()=> {
+                    window.parent.push('/talk');
+                }
             }
         }
     }
     window.todo = todo;
     window.todo.create();
+    
 })();

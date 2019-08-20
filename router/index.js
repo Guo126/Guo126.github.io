@@ -6,31 +6,51 @@ function Guo(parameters) {
             item.addEventListener("click", function(e) {
                 let event = e || window.event;
                 event.preventDefault();
-                window.location.hash = this.getAttribute("href");
+                 window.location.hash = this.getAttribute("href");
+                
             }, false);
         });
-
+        
         window.addEventListener("hashchange", () => {
+            
             guo.routerChange();
+            
         });
 
         guo.routerChange();
     };
+   
     guo.routerChange = () => {
         let nowHash = window.location.hash;
         let index = guo.routes.findIndex((item, index) => {
             return nowHash == ('#' + item.path);
         });
-        if (index >= 0) {
-            document.querySelector("#router-view").innerHTML = guo.routes[index].component;
-            // document.querySelector("#router-view").innerHTML = ' <object type="text/html" data="'
-            // + guo.routes[index].component
-            // +  'width="100%" height="100%"></object>' ;
+        if (index !=-1) {
+           
+            var iframe = document.createElement('iframe');
+            //var name = guo.routes[index].title;
+            
+            iframe.setAttribute('src',guo.routes[index].component);
+            iframe.setAttribute('width','100%');
+            iframe.setAttribute('height','100%');
+            iframe.setAttribute('frameborder','0');
+            iframe.setAttribute('scrolling','no');
+            
+            iframe.innerText = '您的浏览器版本过低，请升级';
+            var view = document.querySelector("#router-view");
+            
+            var oldView = view.children[0];
+            if( view.children[0] !=undefined || view.children[0]!=null){              
+                view.removeChild(oldView);
+                view.appendChild(iframe);            
+            }else{
+                view.appendChild(iframe);
+            }
         } else {
             let defaultIndex = guo.routes.findIndex((item, index) => {
-                return item.path == '*';
+                return item.path == '/';
             });
-            if (defaultIndex >= 0) {
+            if (defaultIndex !=-1) {
                 window.location.hash = guo.routes[defaultIndex].redirect;
             }
         }
@@ -39,24 +59,12 @@ function Guo(parameters) {
     guo.init();
 }
 
+function push(url) {
+    
+    window.location.hash = url;
+}
+
+
 window.Guo = Guo;
 
-// new guo({
-//     routes: [{
-//         path: '/home',
-//         component: "<h1>主页</h1><a href='https://github.com/biaochenxuying'>https://github.com/biaochenxuying</a>"
-//     }, {
-//         path: '/news',
-//         component: "<h1>新闻</h1><a href='http://biaochenxuying.cn/main.html'>http://biaochenxuying.cn/main.html</a>"
-//     }, {
-//         path: '/team',
-//         component: '<h1>团队</h1><h4>全栈修炼</h4>'
-//     }, {
-//         path: '/about',
-//         component: '<h1>关于</h1><h4>关注公众号：BiaoChenXuYing</h4><p>分享 WEB 全栈开发等相关的技术文章，热点资源，全栈程序员的成长之路。</p>'
-//     }, {
-//         path: '*',
-//         redirect: '/home'
-//     }]
-// });
 

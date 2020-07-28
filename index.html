@@ -1,38 +1,110 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"><link rel=icon type=image/x-icon href=static/icons/planet.ico><link href=//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css rel=stylesheet><title>众妙</title><style type=text/css>body {
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"><link rel=icon type=image/x-icon href=static/icons/planet.ico><link href=//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css rel=stylesheet><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css><title>众妙</title><style type=text/css>body {
         margin: 0;
         padding: 0;
+        background-color: #f4c042;
       }
-      .section {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+
+      .box {
+        /* z-index: 1000; */
+        width: 306px;
+        height: 300px;
+        margin: 300px auto 0;
+        background: url(./static/imgs/line.png) no-repeat left bottom;
+        position: relative;
       }
-      .test {
-        box-sizing: border-box;
-        padding-bottom: 20px;
-        width: 140px;
-        height: 150px;
-        background: url("./static/imgs/running.png") no-repeat;
-        animation: lily 0.6s steps(12) infinite;
+      .sun {
+        width: 136px;
+        height: 136px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: 135px;
+        z-index: -1;
+        animation: move 2.7s infinite linear;
       }
-      h1 {
-        box-sizing: border-box;
-        padding-left: 30px;
-        color: #2c3e50;
-        font-size: 30px;
-        font-weight: 700;
+      .sun .eye {
+        position: absolute;
+        top: 43%;
+        left: 30%;
+        animation: eye 2.7s infinite linear;
       }
-      @keyframes lily {
+      .sun .sunbody {
+        animation: scroll 2.7s infinite linear;
+      }
+      .box p {
+        text-align: center;
+        padding-top: 230px;
+        font-family: "苹方";
+        font-size: 25px;
+        color: #7a5600;
+        animation: opp 2.7s infinite linear;
+      }
+      @keyframes move {
         0% {
-          background-position: 0 0;
+          transform: translateY(0);
+        }
+        10% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-40px);
+        }
+        70% {
+          transform: translateY(-40px);
         }
         100% {
-          background-position: -1680px 0;
+          transform: translateY(0);
         }
-      }</style><link href=/static/css/app.0fc4cec7bc17992a8d55d2d385252d90.css rel=stylesheet></head><body><div id=loading class=section><div class=test></div><h1>正在飞速赶来...</h1></div><div id=app></div><script type=text/javascript src=/static/js/manifest.1679a3a06587ce9f2ad2.js></script><script type=text/javascript src=/static/js/vendor.62b60eda6109dade2435.js></script><script type=text/javascript src=/static/js/app.ee82c74dadac690ec8e7.js></script></body></html>
+      }
+      @keyframes scroll {
+        0% {
+          transform: rotate(0);
+        }
+        40% {
+          transform: rotate(0);
+        }
+        50% {
+          transform: rotate(45deg);
+        }
+        60% {
+          transform: rotate(45deg);
+        }
+        100% {
+          transform: rotate(45deg);
+        }
+      }
+      @keyframes eye {
+        0% {
+          transform: translateX(0px);
+        }
+        50% {
+          transform: translateX(0px) scale(1, 1);
+        }
+        55% {
+          transform: translateX(0px) scale(1, 0.1);
+        }
+        60% {
+          transform: translateX(0px) scale(1);
+        }
+        70% {
+          transform: translateX(30px);
+        }
+        100% {
+          transform: translateX(30px);
+        }
+      }
+      @keyframes opp {
+        0% {
+          opacity: 1;
+        }
+        40% {
+          opacity: 1;
+        }
+        60% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }</style><link href=/static/css/app.06294fc53b42daaf68f8f42c417cd354.css rel=stylesheet></head><body><div id=app><div id=loading class=box><div class=sun><img src=./static/imgs/sun.png alt="" class=sunbody> <img src=./static/imgs/eye.png alt="" class=eye></div><p>loading...</p></div></div><script type=text/javascript src=/static/js/manifest.8b952a1ea9d5d9c8e026.js></script><script type=text/javascript src=/static/js/vendor.befce46c42566148aaed.js></script><script type=text/javascript src=/static/js/app.f0fe7f9eb9f7159c90a4.js></script></body></html>
